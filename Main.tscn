@@ -1,27 +1,17 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://camera.gd" type="Script" id=1]
 [ext_resource path="res://art/mainmap_land.png" type="Texture" id=2]
 [ext_resource path="res://art/mainmap_sea.png" type="Texture" id=3]
-[ext_resource path="res://art/SurfaceImperfections001_1K_var1.jpg" type="Texture" id=4]
-[ext_resource path="res://shader/sea.shader" type="Shader" id=5]
-[ext_resource path="res://shader/ground.shader" type="Shader" id=6]
+[ext_resource path="res://shader/sea2.shader" type="Shader" id=4]
+[ext_resource path="res://shader/ground2.shader" type="Shader" id=5]
 [ext_resource path="res://Main.gd" type="Script" id=7]
 
 [sub_resource type="ShaderMaterial" id=1]
-shader = ExtResource( 6 )
-shader_param/color1 = null
-shader_param/color2 = null
-shader_param/color3 = null
-shader_param/color4 = null
-shader_param/color5 = null
-shader_param/color6 = null
+shader = ExtResource( 5 )
 
 [sub_resource type="ShaderMaterial" id=2]
-shader = ExtResource( 5 )
-shader_param/amp = 0.1
-shader_param/tint_color = Plane( 0, 0.48, 0.6, 1 )
-shader_param/diffuse = ExtResource( 4 )
+shader = ExtResource( 4 )
 
 [node name="Main" type="Node2D"]
 script = ExtResource( 7 )
@@ -43,7 +33,7 @@ texture = ExtResource( 3 )
 
 [node name="Panel" type="Panel" parent="CanvasLayer"]
 margin_right = 150.0
-margin_bottom = 56.0
+margin_bottom = 87.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -60,7 +50,7 @@ __meta__ = {
 
 [node name="Autumn" type="Button" parent="CanvasLayer/Panel"]
 margin_left = 7.0
-margin_top = 28.0
+margin_top = 31.0
 margin_right = 12.0
 margin_bottom = 20.0
 text = "Autumn"
@@ -70,7 +60,7 @@ __meta__ = {
 
 [node name="Winter" type="Button" parent="CanvasLayer/Panel"]
 margin_left = 84.0
-margin_top = 28.0
+margin_top = 31.0
 margin_right = 12.0
 margin_bottom = 20.0
 text = "Winter"
@@ -88,7 +78,18 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Terrain" type="Button" parent="CanvasLayer/Panel"]
+margin_left = 7.0
+margin_top = 59.0
+margin_right = 12.0
+margin_bottom = 20.0
+text = "Terrain"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [connection signal="pressed" from="CanvasLayer/Panel/Summer" to="." method="_on_Summer_pressed"]
 [connection signal="pressed" from="CanvasLayer/Panel/Autumn" to="." method="_on_Autumn_pressed"]
 [connection signal="pressed" from="CanvasLayer/Panel/Winter" to="." method="_on_Winter_pressed"]
 [connection signal="pressed" from="CanvasLayer/Panel/Spring" to="." method="_on_Spring_pressed"]
+[connection signal="pressed" from="CanvasLayer/Panel/Terrain" to="." method="_on_Terrain_pressed"]

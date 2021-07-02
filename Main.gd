@@ -36,6 +36,10 @@ const SPRING_COLOR = [
 	Vector3(0.93, 0.71, 0.91),
 ];
 
+onready var ground_shader = preload("res://shader/ground.shader");
+onready var sea_shader = preload("res://shader/sea.shader");
+onready var sea_diffuse = preload("res://art/diffuse.jpg");
+
 func _ready():
 	set_spring()
 
@@ -86,3 +90,9 @@ func _on_Autumn_pressed():
 
 func _on_Summer_pressed():
 	set_summer()
+
+
+func _on_Terrain_pressed():
+	$Ground.material.shader = ground_shader
+	$Sea.material.shader = sea_shader
+	$Sea.material.set_shader_param("diffuse", sea_diffuse)

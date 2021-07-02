@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/SurfaceImperfections001_1K_var1.jpg-43b5179aaa66f4be6395b36227fe0340.stex"
+path="res://.import/diffuse.jpg-a3c59e0e46735f51c77a2a7a274942d0.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/SurfaceImperfections001_1K_var1.jpg"
-dest_files=[ "res://.import/SurfaceImperfections001_1K_var1.jpg-43b5179aaa66f4be6395b36227fe0340.stex" ]
+source_file="res://art/diffuse.jpg"
+dest_files=[ "res://.import/diffuse.jpg-a3c59e0e46735f51c77a2a7a274942d0.stex" ]
 
 [params]
 
