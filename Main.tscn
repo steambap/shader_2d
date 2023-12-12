@@ -1,92 +1,78 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=9 format=3 uid="uid://c7cga4qs66dyt"]
 
-[ext_resource path="res://camera.gd" type="Script" id=1]
-[ext_resource path="res://art/mainmap_land.png" type="Texture" id=2]
-[ext_resource path="res://art/mainmap_sea.png" type="Texture" id=3]
-[ext_resource path="res://shader/sea2.shader" type="Shader" id=4]
-[ext_resource path="res://shader/ground2.shader" type="Shader" id=5]
-[ext_resource path="res://Main.gd" type="Script" id=7]
+[ext_resource type="Script" path="res://camera.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://ddsuxsgm3gj71" path="res://art/mainmap_land.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://dfmy1hpnua4jl" path="res://art/mainmap_sea.png" id="3"]
+[ext_resource type="Shader" path="res://shader/sea2.gdshader" id="4"]
+[ext_resource type="Shader" path="res://shader/ground2.gdshader" id="5"]
+[ext_resource type="Script" path="res://Main.gd" id="7"]
 
-[sub_resource type="ShaderMaterial" id=1]
-shader = ExtResource( 5 )
+[sub_resource type="ShaderMaterial" id="1"]
+shader = ExtResource("5")
 
-[sub_resource type="ShaderMaterial" id=2]
-shader = ExtResource( 4 )
+[sub_resource type="ShaderMaterial" id="2"]
+shader = ExtResource("4")
 
 [node name="Main" type="Node2D"]
-script = ExtResource( 7 )
+script = ExtResource("7")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-offset = Vector2( 600, 400 )
-current = true
-script = ExtResource( 1 )
+offset = Vector2(600, 400)
+script = ExtResource("1")
 
-[node name="Ground" type="Sprite" parent="."]
-material = SubResource( 1 )
-texture = ExtResource( 2 )
+[node name="Ground" type="Sprite2D" parent="."]
+material = SubResource("1")
+texture = ExtResource("2")
 
-[node name="Sea" type="Sprite" parent="."]
-material = SubResource( 2 )
-texture = ExtResource( 3 )
+[node name="Sea" type="Sprite2D" parent="."]
+material = SubResource("2")
+texture = ExtResource("3")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Panel" type="Panel" parent="CanvasLayer"]
-margin_right = 150.0
-margin_bottom = 87.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
+offset_right = 150.0
+offset_bottom = 87.0
 
 [node name="Summer" type="Button" parent="CanvasLayer/Panel"]
-margin_left = 7.0
-margin_top = 3.0
-margin_right = 12.0
-margin_bottom = 20.0
+layout_mode = 0
+offset_left = 7.0
+offset_top = 3.0
+offset_right = 12.0
+offset_bottom = 20.0
 text = "Summer"
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Autumn" type="Button" parent="CanvasLayer/Panel"]
-margin_left = 7.0
-margin_top = 31.0
-margin_right = 12.0
-margin_bottom = 20.0
+layout_mode = 0
+offset_left = 7.0
+offset_top = 31.0
+offset_right = 12.0
+offset_bottom = 20.0
 text = "Autumn"
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Winter" type="Button" parent="CanvasLayer/Panel"]
-margin_left = 84.0
-margin_top = 31.0
-margin_right = 12.0
-margin_bottom = 20.0
+layout_mode = 0
+offset_left = 84.0
+offset_top = 31.0
+offset_right = 12.0
+offset_bottom = 20.0
 text = "Winter"
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Spring" type="Button" parent="CanvasLayer/Panel"]
-margin_left = 84.0
-margin_top = 3.0
-margin_right = 12.0
-margin_bottom = 20.0
+layout_mode = 0
+offset_left = 84.0
+offset_top = 3.0
+offset_right = 12.0
+offset_bottom = 20.0
 text = "Spring"
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Terrain" type="Button" parent="CanvasLayer/Panel"]
-margin_left = 7.0
-margin_top = 59.0
-margin_right = 12.0
-margin_bottom = 20.0
+layout_mode = 0
+offset_left = 7.0
+offset_top = 59.0
+offset_right = 12.0
+offset_bottom = 20.0
 text = "Terrain"
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [connection signal="pressed" from="CanvasLayer/Panel/Summer" to="." method="_on_Summer_pressed"]
 [connection signal="pressed" from="CanvasLayer/Panel/Autumn" to="." method="_on_Autumn_pressed"]

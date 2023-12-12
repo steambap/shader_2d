@@ -36,44 +36,44 @@ const SPRING_COLOR = [
 	Vector3(0.93, 0.71, 0.91),
 ];
 
-onready var ground_shader = preload("res://shader/ground.shader");
-onready var sea_shader = preload("res://shader/sea.shader");
-onready var sea_diffuse = preload("res://art/diffuse.jpg");
+@onready var ground_shader = preload("res://shader/ground.gdshader");
+@onready var sea_shader = preload("res://shader/sea.gdshader");
+@onready var sea_diffuse = preload("res://art/diffuse.jpg");
 
 func _ready():
 	set_spring()
 
 func set_spring():
-	$Ground.material.set_shader_param("color1", SPRING_COLOR[0])
-	$Ground.material.set_shader_param("color2", SPRING_COLOR[1])
-	$Ground.material.set_shader_param("color3", SPRING_COLOR[2])
-	$Ground.material.set_shader_param("color4", SPRING_COLOR[3])
-	$Ground.material.set_shader_param("color5", SPRING_COLOR[4])
-	$Ground.material.set_shader_param("color6", SPRING_COLOR[5])
+	$Ground.material.set_shader_parameter("color1", SPRING_COLOR[0])
+	$Ground.material.set_shader_parameter("color2", SPRING_COLOR[1])
+	$Ground.material.set_shader_parameter("color3", SPRING_COLOR[2])
+	$Ground.material.set_shader_parameter("color4", SPRING_COLOR[3])
+	$Ground.material.set_shader_parameter("color5", SPRING_COLOR[4])
+	$Ground.material.set_shader_parameter("color6", SPRING_COLOR[5])
 
 func set_winter():
-	$Ground.material.set_shader_param("color1", WINTER_COLOR[0])
-	$Ground.material.set_shader_param("color2", WINTER_COLOR[1])
-	$Ground.material.set_shader_param("color3", WINTER_COLOR[2])
-	$Ground.material.set_shader_param("color4", WINTER_COLOR[3])
-	$Ground.material.set_shader_param("color5", WINTER_COLOR[4])
-	$Ground.material.set_shader_param("color6", WINTER_COLOR[5])
+	$Ground.material.set_shader_parameter("color1", WINTER_COLOR[0])
+	$Ground.material.set_shader_parameter("color2", WINTER_COLOR[1])
+	$Ground.material.set_shader_parameter("color3", WINTER_COLOR[2])
+	$Ground.material.set_shader_parameter("color4", WINTER_COLOR[3])
+	$Ground.material.set_shader_parameter("color5", WINTER_COLOR[4])
+	$Ground.material.set_shader_parameter("color6", WINTER_COLOR[5])
 
 func set_autumn():
-	$Ground.material.set_shader_param("color1", AUTUMN_COLOR[0])
-	$Ground.material.set_shader_param("color2", AUTUMN_COLOR[1])
-	$Ground.material.set_shader_param("color3", AUTUMN_COLOR[2])
-	$Ground.material.set_shader_param("color4", AUTUMN_COLOR[3])
-	$Ground.material.set_shader_param("color5", AUTUMN_COLOR[4])
-	$Ground.material.set_shader_param("color6", AUTUMN_COLOR[5])
+	$Ground.material.set_shader_parameter("color1", AUTUMN_COLOR[0])
+	$Ground.material.set_shader_parameter("color2", AUTUMN_COLOR[1])
+	$Ground.material.set_shader_parameter("color3", AUTUMN_COLOR[2])
+	$Ground.material.set_shader_parameter("color4", AUTUMN_COLOR[3])
+	$Ground.material.set_shader_parameter("color5", AUTUMN_COLOR[4])
+	$Ground.material.set_shader_parameter("color6", AUTUMN_COLOR[5])
 
 func set_summer():
-	$Ground.material.set_shader_param("color1", SUMMER_COLOR[0])
-	$Ground.material.set_shader_param("color2", SUMMER_COLOR[1])
-	$Ground.material.set_shader_param("color3", SUMMER_COLOR[2])
-	$Ground.material.set_shader_param("color4", SUMMER_COLOR[3])
-	$Ground.material.set_shader_param("color5", SUMMER_COLOR[4])
-	$Ground.material.set_shader_param("color6", SUMMER_COLOR[5])
+	$Ground.material.set_shader_parameter("color1", SUMMER_COLOR[0])
+	$Ground.material.set_shader_parameter("color2", SUMMER_COLOR[1])
+	$Ground.material.set_shader_parameter("color3", SUMMER_COLOR[2])
+	$Ground.material.set_shader_parameter("color4", SUMMER_COLOR[3])
+	$Ground.material.set_shader_parameter("color5", SUMMER_COLOR[4])
+	$Ground.material.set_shader_parameter("color6", SUMMER_COLOR[5])
 
 
 func _on_Spring_pressed():
@@ -95,4 +95,4 @@ func _on_Summer_pressed():
 func _on_Terrain_pressed():
 	$Ground.material.shader = ground_shader
 	$Sea.material.shader = sea_shader
-	$Sea.material.set_shader_param("diffuse", sea_diffuse)
+	$Sea.material.set_shader_parameter("diffuse", sea_diffuse)
